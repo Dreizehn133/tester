@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DashBoardFragment.FragmentGalery"
+    android:layout_marginTop="?attr/actionBarSize"
+    android:orientation="vertical">
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Semua"
+                android:background="@drawable/bground_siku1"
+                android:textColor="@color/text_line"
+                android:id="@+id/filterSemua"
+                android:padding="10dp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Perusahaan"
+                android:background="@drawable/bground_siku1"
+                android:textColor="@color/text_line"
+                android:id="@+id/filterPerusahaan"
+                android:padding="10dp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bground_siku1"
+                android:textColor="@color/text_line"
+                android:text="Produk"
+                android:id="@+id/filterProduk"
+                android:padding="10dp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/bground_siku1"
+                android:textColor="@color/text_line"
+                android:text="Berita"
+                android:id="@+id/filterBerita"
+                android:padding="10dp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/bground_siku1"
+                android:textColor="@color/text_line"
+                android:text="Agenda"
+                android:id="@+id/filterAgenda"
+                android:padding="10dp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/bground_siku1"
+                android:textColor="@color/text_line"
+                android:text="Pengumuman"
+                android:id="@+id/filterPeng"
+                android:padding="10dp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/bground_siku1"
+                android:textColor="@color/text_line"
+                android:text="Beasiswa"
+                android:id="@+id/filterBeasis"
+                android:padding="10dp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/bground_siku1"
+                android:textColor="@color/text_line"
+                android:text="Loker"
+                android:id="@+id/filterLoker"
+                android:padding="10dp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/bground_siku1"
+                android:textColor="@color/text_line"
+                android:text="Proyek"
+                android:id="@+id/filterProjek"
+                android:padding="10dp" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rvGaleri"
+        android:scrollbars="vertical">
+
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

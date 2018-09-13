@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_grad"
+    android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DAFTAR"
+                android:gravity="center"
+                android:background="@color/gradientE"
+                android:textColor="@color/putih"
+                android:textSize="30sp"
+                android:id="@+id/tvSignUp"
+                android:fontFamily="@string/tulisan" />
+
+            <ImageView
+                android:layout_marginTop="30dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/logos"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/tvSignUp"
+                android:id="@+id/imgs" />
+
+            <LinearLayout
+                android:layout_below="@id/imgs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="0dp"
+                android:paddingTop="30dp"
+                android:paddingBottom="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@string/tulisan"
+                        android:text="Email"
+                        android:textColor="@color/putih"
+                        android:textSize="15sp"
+
+                        tools:fontFamily="@font/buenard" />
+
+                    <EditText
+                        android:id="@+id/etSignEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/edit_text1"
+                        android:textColor="@color/putih"
+                        android:paddingLeft="30dp"
+                        android:paddingRight="30dp"
+                        android:textAlignment="center"
+                        android:inputType="textEmailAddress" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Password"
+                        android:textSize="15sp"
+                        android:fontFamily="@string/tulisan"
+                        android:textColor="@color/putih" />
+
+                    <EditText
+                        android:id="@+id/etSignPass"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/edit_text1"
+                        android:textColor="@color/putih"
+                        android:paddingLeft="30dp"
+                        android:paddingRight="30dp"
+                        android:inputType="textPassword"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nama"
+                        android:textSize="15sp"
+                        android:fontFamily="@string/tulisan"
+                        android:textColor="@color/putih"
+
+                        />
+
+                    <EditText
+                        android:id="@+id/etSignNama"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/edit_text1"
+                        android:textColor="@color/putih"
+                        android:paddingLeft="30dp"
+                        android:paddingRight="30dp"
+                        android:textAlignment="center"
+                        android:inputType="text" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No. HP"
+                        android:textSize="15sp"
+                        android:fontFamily="@string/tulisan"
+                        android:textColor="@color/putih"
+
+                        />
+
+                    <EditText
+                        android:id="@+id/etSignNope"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/edit_text1"
+                        android:textColor="@color/putih"
+                        android:paddingLeft="30dp"
+                        android:paddingRight="30dp"
+                        android:textAlignment="center"
+                        android:inputType="phone" />
+                </LinearLayout>
+
+                <android.support.v7.widget.AppCompatCheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/putih"
+                    android:text="Menyetujui Syarat dan Ketentuan"
+                    android:theme="@style/checkPass"
+                    android:fontFamily="@string/tulisan"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp">
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/button_effect1"
+                        android:text="DAFTAR"
+                        android:textSize="15sp"
+                        android:textColor="@color/putih"
+                        android:fontFamily="@string/tulisan"
+                        android:paddingRight="20dp"
+                        android:paddingLeft="20dp"
+                        android:layout_marginRight="5dp"
+                        android:id="@+id/btnSignUpDaftar" />
+
+                    <Button
+                        android:id="@+id/btnSignUpCancel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/button_effect1"
+                        android:text="BATAL"
+                        android:textSize="15sp"
+                        android:textColor="@color/putih"
+                        android:fontFamily="@string/tulisan"
+                        android:paddingRight="20dp"
+                        android:paddingLeft="20dp"
+                        android:layout_marginLeft="5dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</RelativeLayout>

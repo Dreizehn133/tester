@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">STI</string>
+    <string name="tulisan">@font/buenard</string>
+    <string name="keterangan">Aplikasi ini adalah ..........................................</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string-array name="isi">
+        <item>Content 1</item>
+        <item>Content 2</item>
+        <item>Content 3</item>
+        <item>Content 4</item>
+        <item>Content 5</item>
+    </string-array>
+    <string-array name="judul">
+        <item>Judul 1</item>
+        <item>Judul 2</item>
+        <item>Judul 3</item>
+        <item>Judul 4</item>
+        <item>Judul 5</item>
+    </string-array>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="durasi">
+        <item>500</item>
+    </string>
+
+    <string name="Dashboard">Dashboard</string>
+    <string name="galery">Gallery</string>
+    <string name="about">About Us</string>
+    <string name="card_width">150dp</string>
+    <string name="card_height">150dp</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+</resources>

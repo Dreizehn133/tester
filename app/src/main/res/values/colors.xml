@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="background">#44c8d4</color>
+    <color name="bgr_publik">#ECECEC</color>
+    <color name="putih">#ffffff</color>
+    <color name="hitam">#000000</color>
+    <color name="transparan">#00000000</color>
+    <color name="gradientS">#79c3f4</color>
+    <color name="gradientE">#0387df</color>
+
+    <color name="transpW">#cccccc</color>
+    <color name="buttomNav">#18A19A</color>
+    <color name="titleBgr">#49e2e2e2</color>
+    <color name="dashboardBgr">#fcf9f9</color>
+    <color name="garis_bawah">#079f5b</color>
+    <color name="perusahaan">#1F9C98</color>
+    <color name="prodak">#209DBF</color>
+    <color name="agenda">#E64f80</color>
+    <color name="berita">#c2e404</color>
+    <color name="kuning">#f8c813</color>
+    <color name="pengumuman">#9918a3</color>
+    <color name="toolbarr">#06b8a3</color>
+    <color name="text_line">#c7c7c7</color>
+
+</resources>

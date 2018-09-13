@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/perusahaan"
+        android:title="Perusahaan"
+        android:icon="@drawable/ic_launcher_foreground"></item>
+    <item
+        android:id="@+id/produk"
+        android:title="Produk"
+        android:icon="@drawable/ic_launcher_foreground"></item>
+    <item
+        android:id="@+id/berita"
+        android:title="Berita Terkini"
+        android:icon="@drawable/ic_launcher_foreground"></item>
+    <item
+        android:id="@+id/agenda"
+        android:title="Agenda"
+        android:icon="@drawable/ic_launcher_foreground"></item>
+    <item
+        android:id="@+id/pengumuman"
+        android:title="Pengumuman"
+        android:icon="@drawable/ic_launcher_foreground"></item>
+</menu>

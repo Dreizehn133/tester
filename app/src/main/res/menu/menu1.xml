@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/toolSearch"
+        android:icon="@drawable/ic_search_black_24dp"
+        android:title="Cari"
+        app:showAsAction="collapseActionView|ifRoom"
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        android:iconTint="@color/putih" />
+    <item
+        android:id="@+id/dashb"
+        android:orderInCategory="100"
+        android:title="dashboard"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_home_black_24dp" />
+    <item
+        android:id="@+id/login"
+        android:orderInCategory="100"
+        android:title="login"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_person_black_24dp" />
+</menu>

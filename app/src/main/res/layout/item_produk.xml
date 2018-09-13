@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rvProduk" />
+
+    <Button
+        android:id="@+id/btnProduk"
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:layout_alignParentRight="true"
+        android:background="@color/transparan"
+        android:paddingBottom="0dp"
+        android:paddingTop="5dp"
+        android:text="Lihat Semua"
+        android:textAlignment="textEnd"
+        android:textAllCaps="false"
+        android:paddingRight="5dp"
+        android:textColor="@color/hitam" />
+
+    <TextView
+        android:layout_below="@id/btnProduk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:text="Produk"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:background="@drawable/bg_label"
+        android:backgroundTint="#ff828a"
+        android:textColor="@color/hitam" />
+
+</RelativeLayout>
