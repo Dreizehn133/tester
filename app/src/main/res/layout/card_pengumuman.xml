@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/TinggiContent"
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            app:cardCornerRadius="6dp">
+
+            <ImageView
+                android:id="@+id/pengImg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@color/agenda" />
+        </android.support.v7.widget.CardView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:paddingLeft="15dp">
+
+            <TextView
+                android:id="@+id/pengJudul"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Judul"
+                android:textColor="@color/tulisans"
+                android:textSize="@dimen/tulisanJudul"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/pengText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/pengJudul"
+                android:maxLines="5"
+                android:text="@string/lorem"
+                android:textColor="@color/tulisans2"
+                android:textSize="@dimen/JudulContent" />
+        </RelativeLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>

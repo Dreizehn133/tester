@@ -21,11 +21,15 @@ import android.widget.Toast;
 import com.github.ksoichiro.android.observablescrollview.ObservableScrollViewCallbacks;
 import com.github.ksoichiro.android.observablescrollview.ScrollState;
 
+import java.util.ArrayList;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import mobile.sti.com.sti.DashBoardFragment.FragmentAbout;
 import mobile.sti.com.sti.DashBoardFragment.FragmentDashboard;
 import mobile.sti.com.sti.DashBoardFragment.FragmentGalery;
+import mobile.sti.com.sti.model.SliderDashBoard;
+import mobile.sti.com.sti.utils.Arrays;
 import mobile.sti.com.sti.utils.Preference;
 import mobile.sti.com.sti.utils.Strings;
 
@@ -59,6 +63,10 @@ public class DashBoardActivity extends AppCompatActivity implements NavigationVi
         setSupportActionBar(myToolbar);
         pref = new Preference(this);
 //        myToolbar.setNestedScrollingEnabled(false);
+        Arrays.sliderValue = new ArrayList<>();
+        Arrays.sliderValue.add(new SliderDashBoard("https://images.pexels.com/photos/269077/pexels-photo-269077.jpeg", "PT. Ayam Bangkit", "Perusahaan"));
+        Arrays.sliderValue.add(new SliderDashBoard("https://images.pexels.com/photos/414936/pexels-photo-414936.jpeg", "Pertamina X", "Perusahaan"));
+        Arrays.sliderValue.add(new SliderDashBoard("https://images.pexels.com/photos/6224/hands-people-woman-working.jpg", "Design Thinking", "Agenda"));
 
         fragmentManager.beginTransaction().add(R.id.layoutFrame, frag3, "3").hide(frag3).commit();
         fragmentManager.beginTransaction().add(R.id.layoutFrame, frag2, "2").hide(frag2).commit();

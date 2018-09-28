@@ -3,10 +3,11 @@ package mobile.sti.com.sti.DashBoardFragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.PagerSnapHelper;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,16 +18,25 @@ import android.widget.ViewFlipper;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import io.reactivex.Observable;
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
+import mobile.sti.com.sti.Apis.ApiHandler;
+import mobile.sti.com.sti.Apis.ApiHelper;
 import mobile.sti.com.sti.DashBoard;
 import mobile.sti.com.sti.R;
-import mobile.sti.com.sti.adapter.DashboardMainAdapter;
+import mobile.sti.com.sti.adapter.DashboardMainAdapterAgenda;
 import mobile.sti.com.sti.adapter.DashboardMainAdapterBerita;
-import mobile.sti.com.sti.adapter.DashboardMainAdapterProduk;
+import mobile.sti.com.sti.adapter.DashboardMainAdapterLoker;
+import mobile.sti.com.sti.adapter.DashboardMainAdapterPengumuman;
+import mobile.sti.com.sti.adapter.DashboardMainAdapterPerusahaan;
+import mobile.sti.com.sti.model.Berita.Berita;
 import mobile.sti.com.sti.model.MainModel;
 import mobile.sti.com.sti.model.SliderDashBoard;
 import mobile.sti.com.sti.utils.Arrays;
@@ -38,8 +48,8 @@ public class FragmentDashboard extends Fragment {
     @BindView(R.id.rvPerusahaan)
     RecyclerView rvPerusahaan;
 
-    @BindView(R.id.rvProduk)
-    RecyclerView rvProduk;
+//    @BindView(R.id.rvProduk)
+//    RecyclerView rvProduk;
 
     @BindView(R.id.rvBerita)
     RecyclerView rvBerita;
@@ -49,9 +59,15 @@ public class FragmentDashboard extends Fragment {
 
     @BindView(R.id.rvPengumuman)
     RecyclerView rvPengumuman;
+    @BindView(R.id.rvLoker)
+    RecyclerView rvLoker;
+    @BindView(R.id.rvProyek)
+    RecyclerView rvProyek;
+    @BindView(R.id.rvBeasiswa)
+    RecyclerView rvBeasiswa;
     @BindView(R.id.sliderFlipper)
+
     ViewFlipper flipper;
-    DashboardMainAdapter adapter1;
 
     @OnClick(R.id.btnPerusahaan)
     void Perusahaan() {
@@ -61,13 +77,13 @@ public class FragmentDashboard extends Fragment {
         getActivity().finish();
     }
 
-    @OnClick(R.id.btnProduk)
-    void Produk() {
-//        intent.putExtra(Strings.content,1);
-        Strings.posisi = 1;
-        startActivity(intent);
-        getActivity().finish();
-    }
+//    @OnClick(R.id.btnProduk)
+//    void Produk() {
+////        intent.putExtra(Strings.content,1);
+//        Strings.posisi = 1;
+//        startActivity(intent);
+//        getActivity().finish();
+//    }
 
     @OnClick(R.id.btnBerita)
     void Berita() {
@@ -101,6 +117,24 @@ public class FragmentDashboard extends Fragment {
         setRetainInstance(true);
     }
 
+    @BindView(R.id.nestedscrollview)
+    NestedScrollView nestedScrollView;
+
+    @OnClick(R.id.icon1)
+    void icon1() {
+        nestedScrollView.setScrollY(R.id.contentPengumuman);
+    }
+
+    @OnClick(R.id.icon2)
+    void icon2() {
+//            nestedScrollView.scrollTo(R.id.contentAgenda,R.id.contentAgenda);
+        nestedScrollView.setScrollY(R.id.contentAgenda);
+    }
+
+    @OnClick(R.id.icon3)
+    void icon3() {
+        nestedScrollView.setScrollY(R.id.contentBerita);
+    }
     View view;
 
     @Override
@@ -114,75 +148,89 @@ public class FragmentDashboard extends Fragment {
         for (SliderDashBoard slide : Arrays.sliderValue) {
             flipperImage(slide);
         }
+        getBerita();
         return v;
     }
 
-    List<RecyclerView> obj1;
-    List<RecyclerView.LayoutManager> layouts;
 
     void setRecycler() {
-
-        layouts = new ArrayList<>();
-        for (int i = 0; i < 6; i++) {
-            layouts.add(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
-        }
-        obj1 = new ArrayList<RecyclerView>();
-        obj1.add(rvPerusahaan);
-        obj1.add(rvProduk);
-        obj1.add(rvBerita);
-        obj1.add(rvAgenda);
-        obj1.add(rvPengumuman);
-        for (int i = 0; i < obj1.size(); i++) {
-            RecyclerView r = obj1.get(i);
-            Log.e("RV", r + "");
-            r.setLayoutManager(layouts.get(i));
-            r.setItemAnimator(new DefaultItemAnimator());
-        }
-
 
         tesData();
     }
 
-    //    public static List<MainModel> perusahaan;
-//    public static List<MainModel> produk;
-//    public static List<MainModel> berita;
-//    public static List<MainModel> agenda;
-//    public static List<MainModel> pengumuman;
     void tesData() {
         Arrays.perusahaan = new ArrayList<>();
         Arrays.produk = new ArrayList<>();
-        Arrays.berita = new ArrayList<>();
         Arrays.agenda = new ArrayList<>();
         Arrays.pengumuman = new ArrayList<>();
-        for (int i = 0; i <= 7; i++) {
-            Arrays.perusahaan.add(new MainModel("Perusahaan" + i, "" + i, ""));
-            Arrays.produk.add(new MainModel("Produk" + i, "" + i, ""));
-            Arrays.berita.add(new MainModel("Berita" + i, "" + i, ""));
-            Arrays.agenda.add(new MainModel("Agenda" + i, "" + i, ""));
-            Arrays.pengumuman.add(new MainModel("Pengumuman" + i, "" + i, ""));
-        }
-        List<List<MainModel>> obj = new ArrayList<List<MainModel>>();
+        Arrays.loker = new ArrayList<>();
+        Arrays.proyek = new ArrayList<>();
+        Arrays.beasiswa = new ArrayList<>();
 
-        obj.add(Arrays.perusahaan);
-        obj.add(Arrays.produk);
-        obj.add(Arrays.berita);
-        obj.add(Arrays.agenda);
-        obj.add(Arrays.pengumuman);
-        List<DashboardMainAdapter> adapters = new ArrayList<>();
-        for (int i = 0; i < obj.size(); i++) {
-            adapters.add(new DashboardMainAdapter(getContext(), obj.get(i)));
+        Arrays.pengumuman.add(new MainModel("Penerimaan Pegawai", "PT. Hidup Makmur menerima pegawai sana sini dengan kriteria sembarang asal bisa komputer", "https://www.signaturestaff.com.au/wp-content/uploads/2016/07/iStock_000005150916XSmall.jpg"));
+        Arrays.pengumuman.add(new MainModel("Design Thinking", "PT. Ini itu lg nongkrong buat mikirin masa depan", "https://images.pexels.com/photos/6224/hands-people-woman-working.jpg"));
+        Arrays.pengumuman.add(new MainModel("Penemuan Mayat", "PT. Hidup Makmur menerima pegawai sana sini dengan kriteria sembarang asal bisa komputer", "https://i0.wp.com/beritautama.net/wp-content/uploads/2018/06/Kepala-Basarnas-M-Syaugi-696x394.jpg?fit=696,394"));
+        Arrays.pengumuman.add(new MainModel("Hidup itu Indah", "Lorem Ipsum Bla Bla Bla", "https://images.pexels.com/photos/6224/hands-people-woman-working.jpg"));
+        Arrays.pengumuman.add(new MainModel("Penerimaan Calon Istri", "PT. Hidup Makmur menerima pegawai sana sini dengan kriteria sembarang asal bisa komputer", "https://www.signaturestaff.com.au/wp-content/uploads/2016/07/iStock_000005150916XSmall.jpg"));
 
-        }
-        for (int i = 0; i < obj1.size(); i++) {
-            obj1.get(i).setAdapter(adapters.get(i));
-            adapters.get(i).notifyDataSetChanged();
-        }
-        rvBerita.setAdapter(new DashboardMainAdapterBerita(getContext(), Arrays.berita));
-        rvProduk.setAdapter(new DashboardMainAdapterProduk(getContext(), Arrays.produk));
+        Arrays.agenda.add(new MainModel("Poltek Siap Kerja", "", "http://cdn2.tstatic.net/makassar/foto/bank/images/saleh-husin-1_20150728_204224.jpg"));
+        Arrays.agenda.add(new MainModel("Seminar Wirausaha", "", "https://www.nusabali.com/article_images/25371/seminar-nasional-wirausaha-muda-udayana-2018-800-2018-02-12-121657_0.jpg"));
+        Arrays.agenda.add(new MainModel("Seminar Nasional", "", "https://infoeventbali.files.wordpress.com/2014/01/enaknya-jadi-pengusaha.jpg"));
+        Arrays.agenda.add(new MainModel("Workshop Cari Mertua", "", "http://www.franchiseglobal.com/images/posts/2016/02/09/Seminar-Franchise-Business-Matching-2016.jpg"));
+        Arrays.agenda.add(new MainModel("Hidup di Kos-kosan", "", "http://cdn2.tstatic.net/makassar/foto/bank/images/saleh-husin-1_20150728_204224.jpg"));
+
+        Arrays.perusahaan.add(new MainModel("PT. Enak sanasini", "https://3.bp.blogspot.com/-ol2b2BkCwPU/WrH6XzPk_2I/AAAAAAAAOKg/d8VwwITaFwoPlwCDKhwG5oW8eiCnxPCLgCLcBGAs/s640/Foto%2BCewek%2BPaling%2BCantik%2BIdaman%2BLelaki%2BSejati.jpg", "http://cdn2.tstatic.net/makassar/foto/bank/images/saleh-husin-1_20150728_204224.jpg"));
+        Arrays.perusahaan.add(new MainModel("PT. Asal Jadi", "https://3.bp.blogspot.com/-8aWa1ZH1vVc/WaQ8DgmOOUI/AAAAAAAAH8A/1b1oBBSadU8UgRwQUjfuBjl-OCOw_g3xwCEwYBhgL/s400/Cewek%2BCantik%2BBiodatalengkap%2B2%2B%25282%2529.jpg", "https://cdn-kisikisi.jobs.id/assets/images/company/53312d02582635886f8b4579/samsung_electronics_indonesia_pt_main_samsungelectronicsindonesia.jpg"));
+        Arrays.perusahaan.add(new MainModel("PT. Asal Masuk", "https://2.bp.blogspot.com/-Se1xc5SfnJI/WaQ8EnalrMI/AAAAAAAAH8Q/PxPVCgN8I4UK2MONknqF6ruQWEox3dWwACEwYBhgL/s400/Cewek%2BCantik%2BBiodatalengkap%2B2%2B%25285%2529.jpg", "https://izinmudah.com/wp-content/uploads/2017/11/22-Berapa-biaya-bikin-PT.jpg"));
+
+        Arrays.loker.add(new MainModel("PT. Ini itu", "Sekretaris Pribadi", "https://3.bp.blogspot.com/-vp4HXUtFA4s/V_tE4gvM_AI/AAAAAAAANTk/M9YqXGXfOy42OPwMCEiUMQOD0XJSV0VowCLcB/s1600/Lowongan%2BKerja%2BDinas%2BKesehatan%2BKabupaten%2BBanyumas.jpg"));
+        Arrays.loker.add(new MainModel("PT. Aneka Jaya", "Jual Sendal", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDN5TTZSvnp7eW2X2cr8uE3yZunPmnZ8p0PDScuzE7sqVCQeNA"));
+        Arrays.loker.add(new MainModel("PT. Jaringan", "Network Enginer", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6BAq6CS-QpxOKE-KcMhxx_Zh6dNTz7FrfzXngg884V3d7_d8Fyw"));
+        Arrays.loker.add(new MainModel("PT. Apa Aja", "Babu Rumah tangga", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdqwxJ5addHx5XERmWDXgUYXcM1aab9-f6O0OiuVJR_ztSwqXb"));
+        Arrays.loker.add(new MainModel("PT. Happy Famz", "Badut", "http://www.umm.ac.id/files/image/lowongan_pekerjaan/Untitled-1.jpg"));
+
+        Arrays.proyek.add(new MainModel("Design Thinking", "PT. Ini itu lg nongkrong buat mikirin masa depan", "https://images.pexels.com/photos/6224/hands-people-woman-working.jpg"));
+        Arrays.proyek.add(new MainModel("PT. Aneka Jaya", "Jual Sendal", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDN5TTZSvnp7eW2X2cr8uE3yZunPmnZ8p0PDScuzE7sqVCQeNA"));
+        Arrays.proyek.add(new MainModel("PT. Apa Aja", "Babu Rumah tangga", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdqwxJ5addHx5XERmWDXgUYXcM1aab9-f6O0OiuVJR_ztSwqXb"));
+
+        Arrays.beasiswa.add(new MainModel("Beasiswa 1k", "20/10/2099 aa", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6BAq6CS-QpxOKE-KcMhxx_Zh6dNTz7FrfzXngg884V3d7_d8Fyw"));
+        Arrays.beasiswa.add(new MainModel("Beasiswa Hidup Makmur", "20/10/2099 aa", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDN5TTZSvnp7eW2X2cr8uE3yZunPmnZ8p0PDScuzE7sqVCQeNA"));
+        Arrays.beasiswa.add(new MainModel("Beasiswa 1 hati 2 cinta", "20/10/2099 aa", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdqwxJ5addHx5XERmWDXgUYXcM1aab9-f6O0OiuVJR_ztSwqXb"));
+
+
+        rvPengumuman.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
+        rvPengumuman.setItemAnimator(new DefaultItemAnimator());
+
+        rvAgenda.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
+        rvAgenda.setItemAnimator(new DefaultItemAnimator());
+
+        rvProyek.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
+        rvProyek.setItemAnimator(new DefaultItemAnimator());
+
+        rvPerusahaan.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
+        rvPerusahaan.setItemAnimator(new DefaultItemAnimator());
+
+        rvLoker.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
+        rvLoker.setItemAnimator(new DefaultItemAnimator());
+
+        rvPengumuman.setAdapter(new DashboardMainAdapterPengumuman(getContext(), Arrays.pengumuman));
+        rvAgenda.setAdapter(new DashboardMainAdapterAgenda(getContext(), Arrays.agenda));
+        rvProyek.setAdapter(new DashboardMainAdapterAgenda(getContext(), Arrays.proyek));
+        rvPerusahaan.setAdapter(new DashboardMainAdapterPerusahaan(getContext(), Arrays.perusahaan));
+        rvLoker.setAdapter(new DashboardMainAdapterLoker(getContext(), Arrays.loker));
+//        rvProduk.setAdapter(new DashboardMainAdapterProduk(getContext(), Arrays.produk));
+//        SnapHelper snapHelper=new PagerSnapHelper();
+        rvBeasiswa.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
+        rvBeasiswa.setItemAnimator(new DefaultItemAnimator());
+        rvBeasiswa.setAdapter(new DashboardMainAdapterBerita(getContext(), Arrays.beasiswa, 2));
+//        new PagerSnapHelper().attachToRecyclerView(rvProduk);
+        new PagerSnapHelper().attachToRecyclerView(rvPengumuman);
+        new PagerSnapHelper().attachToRecyclerView(rvAgenda);
+        new PagerSnapHelper().attachToRecyclerView(rvProyek);
+        new PagerSnapHelper().attachToRecyclerView(rvPerusahaan);
     }
 
     void flipperImage(SliderDashBoard slide) {
-//        ImageView image = new ImageView(this);
         view = LayoutInflater.from(getContext()).inflate(R.layout.flipper_content, null, false);
 
         ImageView image = view.findViewById(R.id.flipperimage);
@@ -206,5 +254,39 @@ public class FragmentDashboard extends Fragment {
 
     }
 
+    private void getBerita() {
+        Observable<Berita> api = ApiHelper.getClient(getContext()).create(ApiHandler.class)
+                .getBerita();
+        api.subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<Berita>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(Berita berita) {
+                        if (berita.getResponse() == 200) {
+                            Arrays.berita = new ArrayList<>();
+                            Arrays.berita = berita.getData();
+                            rvBerita.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
+                            rvBerita.setItemAnimator(new DefaultItemAnimator());
+                            rvBerita.setAdapter(new DashboardMainAdapterBerita(getContext(), Arrays.berita));
+
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
 
 }

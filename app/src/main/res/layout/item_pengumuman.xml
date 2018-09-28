@@ -2,8 +2,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/putih"
-    android:padding="5dp"
     android:elevation="4dp">
 
     <LinearLayout
@@ -13,45 +11,45 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/JarakJuduldenganContent"
+            android:background="@color/transparan"
+            android:paddingLeft="@dimen/Jarak"
+            android:paddingRight="@dimen/Jarak">
 
-            <LinearLayout
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_centerVertical="true">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Pengumuman Terbaru"
-                    android:layout_centerVertical="true" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="3dp"
-                    android:background="@color/garis_bawah" />
-            </LinearLayout>
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/roboto"
+                android:text="Pengumuman"
+                android:textColor="@color/tulisans"
+                android:textSize="@dimen/JudulSize"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/btnPengum"
                 android:layout_width="wrap_content"
                 android:layout_height="28dp"
                 android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
                 android:background="@color/transparan"
-                android:paddingBottom="0dp"
                 android:paddingTop="0dp"
+                android:paddingBottom="0dp"
                 android:text="Lihat Semua"
                 android:textAlignment="textEnd"
                 android:textAllCaps="false"
+                android:textColor="@color/battBar"
+                android:textSize="@dimen/JudulContent"
 
                 />
         </RelativeLayout>
 
         <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvPengumuman"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/rvPengumuman" />
+            android:background="@color/putih" />
     </LinearLayout>
 
 </RelativeLayout>

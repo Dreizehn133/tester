@@ -56,7 +56,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 try {
-                    t.sleep(4000);
+                    Thread.sleep(4000);
 //                    if(getResources().getConfiguration().orientation!=Orientation){
 //                        next=false;
 //                        Log.e(Strings.Error,"berputar");

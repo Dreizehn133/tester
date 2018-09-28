@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/transparan">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/JarakJuduldenganContent"
+            android:background="@color/transparan"
+            android:paddingLeft="@dimen/Jarak"
+            android:paddingRight="@dimen/Jarak">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/roboto"
+                android:text="Beasiswa"
+                android:textColor="@color/tulisans"
+                android:textSize="@dimen/JudulSize"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnBeasiswa"
+                android:layout_width="wrap_content"
+                android:layout_height="28dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@color/transparan"
+                android:paddingTop="0dp"
+                android:paddingBottom="0dp"
+                android:text="Lihat Semua"
+                android:textAlignment="textEnd"
+                android:textAllCaps="false"
+                android:textColor="@color/battBar"
+                android:textSize="@dimen/JudulContent" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rvBeasiswa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/Jarak" />
+
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

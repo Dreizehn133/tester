@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="menuroot">60dp</dimen>
+    <dimen name="menuIcon">30dp</dimen>
+    <dimen name="Jarak">10dp</dimen>
+    <dimen name="JarakJuduldenganContent">5dp</dimen>
+    <dimen name="JarakAntarContent">20dp</dimen>
+    <dimen name="TinggiContent">200dp</dimen>
+
+    <dimen name="shadows">2dp</dimen>
+    <dimen name="tulisanJudul">17dp</dimen>
+
+    <dimen name="JudulSize">20sp</dimen>
+    <dimen name="JudulContent">15sp</dimen>
+
+</resources>

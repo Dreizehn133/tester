@@ -77,7 +77,7 @@ public class DashBoard extends AppCompatActivity implements NavigationView.OnNav
                 break;
             case 3:
                 myToolbar.setTitle("Daftar Berita");
-                Arrays.values = Arrays.berita;
+//                Arrays.values = Arrays.berita;
                 break;
             case 4:
                 myToolbar.setTitle("Daftar Pengumuman");
@@ -113,7 +113,7 @@ public class DashBoard extends AppCompatActivity implements NavigationView.OnNav
         cari = menu.findItem(R.id.toolSearch);
         searchView = (SearchView) cari.getActionView();
         searchView.setQueryHint("Cari");
-        ImageView searchClose = (ImageView) searchView.findViewById(android.support.v7.appcompat.R.id.search_close_btn);
+        ImageView searchClose = searchView.findViewById(android.support.v7.appcompat.R.id.search_close_btn);
 
         searchClose.setColorFilter(Color.WHITE);
 

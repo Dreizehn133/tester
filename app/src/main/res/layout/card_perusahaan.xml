@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/TinggiContent"
+    android:background="@color/putih">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/perusahaanImg"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="fitXY"
+
+            />
+
+        <ImageView
+            android:id="@+id/perusahaanImgUser"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:id="@+id/perusahaanJudul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/perusahaanImg"
+            android:layout_marginLeft="75dp"
+            android:layout_marginTop="@dimen/JarakJuduldenganContent"
+            android:text="Judul"
+            android:textColor="@color/tulisans"
+            android:textSize="@dimen/tulisanJudul"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/perusahaanImg"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/JarakJuduldenganContent"
+            android:layout_marginRight="@dimen/Jarak"
+            android:text="Lihat Profil"
+            android:textColor="@color/battBar"
+            android:textSize="@dimen/JudulContent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            android:paddingLeft="5dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/cardNama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="@color/hitam" />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

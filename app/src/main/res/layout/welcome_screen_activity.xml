@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WelcomeScreen"
-    android:background="@drawable/background_grad">
+    android:background="@drawable/background_grad"
+    tools:context=".WelcomeScreen">
 
     <android.support.v4.view.ViewPager
         android:id="@+id/slider"
@@ -19,34 +19,34 @@
         android:layout_marginBottom="15dp">
 
         <Button
+            android:id="@+id/btnBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/transparan"
-            android:text="Back"
-            android:textSize="15sp"
             android:paddingLeft="15dp"
-            android:id="@+id/btnBack"
+            android:text="Back"
             android:textColor="@color/putih"
+            android:textSize="15sp"
             android:visibility="invisible" />
 
         <Button
+            android:id="@+id/btnNext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/transparan"
-            android:text="Next"
-            android:textSize="15sp"
-            android:id="@+id/btnNext"
-            android:textColor="@color/putih"
             android:layout_alignParentRight="true"
-            android:paddingRight="15dp" />
+            android:background="@color/transparan"
+            android:paddingRight="15dp"
+            android:text="Next"
+            android:textColor="@color/putih"
+            android:textSize="15sp" />
     </RelativeLayout>
 
     <LinearLayout
         android:id="@+id/dotLayout"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:orientation="horizontal"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="15dp"
-        android:gravity="center" />
+        android:gravity="center"
+        android:orientation="horizontal" />
 </RelativeLayout>

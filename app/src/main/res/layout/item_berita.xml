@@ -11,32 +11,36 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/JarakJuduldenganContent"
+            android:background="@color/transparan"
+            android:paddingLeft="@dimen/Jarak"
+            android:paddingRight="@dimen/Jarak">
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:background="@color/putih"
-                android:layout_margin="0dp"
-                android:padding="10dp"
-                android:layout_centerVertical="true">
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/roboto"
+                android:text="Berita"
+                android:textColor="@color/tulisans"
+                android:textSize="@dimen/JudulSize"
+                android:textStyle="bold" />
 
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/cogwheel" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Berita"
-                    android:fontFamily="@string/tulisan"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/hitam" />
-            </LinearLayout>
-
+            <Button
+                android:id="@+id/btnBerita"
+                android:layout_width="wrap_content"
+                android:layout_height="28dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@color/transparan"
+                android:paddingTop="0dp"
+                android:paddingBottom="0dp"
+                android:text="Lihat Semua"
+                android:textAlignment="textEnd"
+                android:textAllCaps="false"
+                android:textColor="@color/battBar"
+                android:textSize="@dimen/JudulContent" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -44,39 +48,12 @@
             android:layout_height="match_parent">
 
             <android.support.v7.widget.RecyclerView
+                android:id="@+id/rvBerita"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/rvBerita" />
+                android:layout_marginLeft="@dimen/Jarak" />
 
-            <Button
-                android:id="@+id/btnBerita"
-                android:layout_width="wrap_content"
-                android:layout_height="28dp"
-                android:layout_alignParentRight="true"
-                android:background="@color/transparan"
-                android:paddingBottom="0dp"
-                android:paddingTop="0dp"
-                android:text="Lihat Semua"
-                android:textAlignment="textEnd"
-                android:textAllCaps="false"
-                android:paddingRight="5dp"
-                android:textColor="@color/hitam" />
 
-            <TextView
-                android:layout_below="@id/btnBerita"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="5dp"
-                android:text="Berita"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
-                android:paddingRight="10dp"
-                android:paddingLeft="10dp"
-                android:background="@drawable/bg_label"
-
-                android:textColor="@color/putih" />
         </RelativeLayout>
     </LinearLayout>
 

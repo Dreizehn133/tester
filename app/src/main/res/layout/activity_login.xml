@@ -4,47 +4,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login"
-    android:background="@drawable/background_grad"
-    android:animateLayoutChanges="true">
+    android:animateLayoutChanges="true"
+    android:background="@color/newBg1"
+    tools:context=".Login">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_marginRight="40dp"
-        android:layout_marginLeft="40dp">
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
 
         <ImageView
+            android:id="@+id/imgLogos"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:id="@+id/imgLogos"
-            android:src="@drawable/logos"
+            android:layout_centerHorizontal="true"
             android:adjustViewBounds="true"
-            android:layout_centerHorizontal="true" />
+            android:src="@drawable/logos" />
 
         <RelativeLayout
             android:id="@+id/rel1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/imgLogos">
+            android:layout_below="@id/imgLogos"
+
+            >
 
             <TextView
                 android:id="@+id/tvLogin"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
                 android:fontFamily="@font/buenard"
-                android:textSize="30sp"
                 android:text="LOGIN"
-                android:textColor="@color/putih" />
+                android:textAlignment="center"
+                android:textColor="@color/putih"
+                android:textSize="30sp" />
 
             <LinearLayout
+                android:id="@+id/linear1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvLogin"
-                android:orientation="vertical"
-                android:id="@+id/linear1">
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -59,107 +63,266 @@
                         <android.support.design.widget.TextInputEditText
                             android:id="@+id/etEmail"
                             android:layout_width="match_parent"
-                            android:layout_height="40dp"
-                            android:background="@drawable/edit_text"
-                            android:textColor="@color/putih"
-                            android:fontFamily="@string/tulisan"
-                            android:textSize="15dp"
-                            android:paddingLeft="5dp"
-                            android:paddingRight="15dp"
-                            android:inputType="textEmailAddress"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bground_sikuform"
                             android:drawableLeft="@drawable/ic_email_black_24dp"
+                            android:drawablePadding="5dp"
                             android:hint="@string/prompt_email"
-                            android:drawablePadding="5dp" />
+                            android:inputType="textEmailAddress"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="15dp"
+                            android:paddingRight="15dp"
+                            android:paddingBottom="15dp"
+                            android:textColor="@color/newTulisan"
+                            android:textSize="15dp" />
                     </android.support.design.widget.TextInputLayout>
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="15dp"
+                    android:orientation="vertical">
 
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        app:hintEnabled="false"
                         app:passwordToggleEnabled="true"
-                        app:passwordToggleTint="#FFF"
-                        app:hintEnabled="false">
+                        app:passwordToggleTint="@color/newTint">
 
                         <android.support.design.widget.TextInputEditText
                             android:id="@+id/etPass"
                             android:layout_width="match_parent"
-                            android:layout_height="40dp"
-                            android:background="@drawable/edit_text"
-                            android:inputType="textPassword"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bground_sikuform"
                             android:drawableStart="@drawable/ic_lock_open_black_24dp"
                             android:drawablePadding="5dp"
-                            android:textColor="@color/putih"
-                            android:fontFamily="@string/tulisan"
-                            android:textSize="15dp"
-                            android:paddingLeft="5dp"
+                            android:hint="@string/prompt_password"
+                            android:inputType="textPassword"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="15dp"
                             android:paddingRight="15dp"
-                            android:hint="@string/prompt_password" />
+                            android:paddingBottom="15dp"
+                            android:textColor="@color/newTulisan"
+                            android:textSize="15dp" />
                     </android.support.design.widget.TextInputLayout>
 
-                    <Button
+                    <TextView
                         android:id="@+id/btnForget"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
+                        android:layout_marginBottom="5dp"
                         android:background="@color/transparan"
-                        android:textColor="@color/putih"
                         android:text="Lupa Password?"
-                        android:fontFamily="@string/tulisan" />
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/putih" />
                 </LinearLayout>
             </LinearLayout>
 
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/linear1"
-                android:layout_marginTop="50dp"
-                android:text="Login"
-                android:background="@drawable/button_effect"
-                android:fontFamily="@string/tulisan"
-                android:textColor="@color/putih"
-                android:paddingRight="70dp"
-                android:paddingLeft="70dp"
                 android:layout_centerHorizontal="true"
-                android:textSize="25dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button_effect1"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:text="Login"
                 android:textAllCaps="false"
-                android:id="@+id/btnLogin" />
+                android:textColor="@color/newPutih"
+                android:textSize="20sp" />
 
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relSignUp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imgLogos"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+
+            >
+
+            <LinearLayout
+                android:id="@+id/linearrr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="0dp"
+                android:orientation="vertical"
+                android:paddingTop="0dp"
+
+                android:paddingBottom="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Email"
+                        android:textColor="@color/putih"
+                        android:textSize="15sp"
+
+                        tools:fontFamily="@font/buenard" />
+
+                    <EditText
+                        android:id="@+id/etSignEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bground_sikuform"
+
+                        android:inputType="textEmailAddress"
+                        android:padding="15dp"
+                        android:textAlignment="center"
+                        android:textColor="@color/newTulisan"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Password"
+                        android:textColor="@color/putih"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/etSignPass"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bground_sikuform"
+                        android:inputType="textPassword"
+                        android:padding="15dp"
+                        android:textAlignment="center"
+
+                        android:textColor="@color/newTulisan"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nama"
+                        android:textColor="@color/putih"
+                        android:textSize="15sp"
+
+                        />
+
+                    <EditText
+                        android:id="@+id/etSignNama"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bground_sikuform"
+                        android:inputType="text"
+                        android:padding="15dp"
+                        android:textAlignment="center"
+
+                        android:textColor="@color/newTulisan"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No. HP"
+                        android:textColor="@color/putih"
+                        android:textSize="15sp"
+
+                        />
+
+                    <EditText
+                        android:id="@+id/etSignNope"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bground_sikuform"
+                        android:inputType="phone"
+                        android:padding="15dp"
+                        android:textAlignment="center"
+                        android:textColor="@color/newTulisan"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <android.support.v7.widget.AppCompatCheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Menyetujui Syarat dan Ketentuan"
+                    android:textColor="@color/putih"
+                    android:textSize="15sp"
+                    android:theme="@style/checkPass" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnSignUpDaftar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/button_effect1"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="15dp"
+                        android:text="DAFTAR"
+                        android:textColor="@color/newPutih"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+            </LinearLayout>
         </RelativeLayout>
     </RelativeLayout>
 
+
     <RelativeLayout
+        android:id="@+id/rel2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/rel2"
-        android:layout_marginRight="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_alignParentBottom="true">
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
 
         <Button
             android:id="@+id/btnSignUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/transparan"
-            android:text="SIGN UP"
-            android:textColor="@color/putih"
-            android:fontFamily="@string/tulisan"
-            android:textAlignment="textStart" />
+            android:text="Signup"
+            android:textAlignment="textStart"
+            android:textColor="@color/putih" />
 
         <Button
+            android:id="@+id/btnKembali"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/transparan"
-            android:textColor="@color/putih"
-            android:text="Back"
             android:layout_alignParentRight="true"
-            android:id="@+id/btnKembali"
-            android:fontFamily="@string/tulisan"
-            android:textAlignment="textEnd" />
+            android:background="@color/transparan"
+            android:text="Back"
+            android:textAlignment="textEnd"
+            android:textColor="@color/putih" />
     </RelativeLayout>
 </RelativeLayout>

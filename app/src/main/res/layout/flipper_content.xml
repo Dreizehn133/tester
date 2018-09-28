@@ -4,9 +4,9 @@
     android:layout_height="match_parent">
 
     <ImageView
+        android:id="@+id/flipperimage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/flipperimage"
         android:scaleType="fitXY" />
 
     <RelativeLayout
@@ -17,24 +17,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:background="@color/titleBgr"
+            android:background="@drawable/background_grad"
             android:paddingLeft="15dp"
-            android:paddingRight="15dp"
             android:paddingTop="10dp"
+            android:paddingRight="15dp"
             android:paddingBottom="10dp">
 
             <TextView
+                android:id="@+id/slideTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/slideTitle"
-                android:textColor="@color/putih" />
+                android:textColor="@color/putih"
+                android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/slideCat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/slideCat"
+                android:layout_alignParentRight="true"
                 android:textColor="@color/putih"
-                android:layout_alignParentRight="true" />
+                android:textStyle="bold" />
         </RelativeLayout>
 
     </RelativeLayout>

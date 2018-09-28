@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">STI</string>
-    <string name="tulisan">@font/buenard</string>
+    <string name="app_name">Hipmi Network</string>
     <string name="keterangan">Aplikasi ini adalah ..........................................</string>
     <string name="title_activity_login">Sign in</string>
 

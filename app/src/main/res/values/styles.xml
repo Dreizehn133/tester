@@ -3,11 +3,11 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/battBar</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:colorControlNormal">@color/putih</item>
-        <item name="colorPrimaryDark">@color/buttomNav</item>
+        <item name="colorPrimaryDark">@color/battBar</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowAnimationStyle">@style/CustomActivityAnimation</item>
         <item name="drawerArrowStyle">@style/DrawerIcon</item>
@@ -17,11 +17,11 @@
     </style>
 
     <style name="tulisan" parent="android:Widget.TextView">
-        <item name="android:fontFamily">@font/buenard</item>
+        <item name="android:fontFamily">@font/roboto</item>
     </style>
 
     <style name="tulisanBtn" parent="android:Widget.Holo.Button">
-        <item name="android:fontFamily">@font/buenard</item>
+        <item name="android:fontFamily">@font/roboto</item>
     </style>
 
     <style name="AppTheme2" parent="Theme.AppCompat.Light.DarkActionBar">

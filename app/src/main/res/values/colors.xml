@@ -12,9 +12,16 @@
     <color name="gradientE">#0387df</color>
 
     <color name="transpW">#cccccc</color>
-    <color name="buttomNav">#18A19A</color>
+    <color name="buttomNav">#16c79e</color>
+    <color name="battBar">#16c49e</color>
     <color name="titleBgr">#49e2e2e2</color>
-    <color name="dashboardBgr">#fcf9f9</color>
+    <color name="dashboardBgr">#f8f8f8</color>
+    <color name="tulisans">#666a67</color>
+    <color name="tulisans2">#898c8a</color>
+    <color name="iconbg">#e8f3ef</color>
+    <color name="iconfond">#52be93</color>
+
+
     <color name="garis_bawah">#079f5b</color>
     <color name="perusahaan">#1F9C98</color>
     <color name="prodak">#209DBF</color>
@@ -22,7 +29,12 @@
     <color name="berita">#c2e404</color>
     <color name="kuning">#f8c813</color>
     <color name="pengumuman">#9918a3</color>
-    <color name="toolbarr">#06b8a3</color>
+    <color name="toolbarr">@color/buttomNav</color>
     <color name="text_line">#c7c7c7</color>
+    <color name="newBg1">#1de7b0</color>
+    <color name="newPutih">#fcf7fe</color>
+    <color name="newTint">#b3aeb2</color>
+    <color name="newTulisan">#4e4d4d</color>
+
 
 </resources>

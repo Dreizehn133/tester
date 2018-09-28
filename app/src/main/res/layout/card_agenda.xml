@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/TinggiContent"
+
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/agendaImg"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_alignParentBottom="true"
+
+            android:scaleType="fitXY" />
+
+
+        <TextView
+            android:id="@+id/agendaJudul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/agendaImg"
+            android:layout_below="@id/agendaTgl"
+
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="5dp"
+            android:paddingRight="15dp"
+            android:text=""
+            android:textColor="@color/tulisans"
+            android:textSize="@dimen/tulisanJudul"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/agendaTgl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:text="20/20/2000"
+            android:textColor="@color/tulisans2"
+            android:textSize="@dimen/JudulContent" />
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GalleryPreviewActivity"
-    android:background="#717171">
+    android:background="#717171"
+    tools:context=".GalleryPreviewActivity">
 
     <com.github.piasy.biv.view.BigImageView
         android:id="@+id/mBigImage"
@@ -15,11 +15,11 @@
         app:optimizeDisplay="true" />
 
     <ImageView
+        android:id="@+id/galleryClose1"
         android:layout_width="35dp"
         android:layout_height="30dp"
-        android:src="@drawable/ic_close_black_24dp"
         android:layout_alignParentRight="true"
-        android:id="@+id/galleryClose1" />
+        android:src="@drawable/ic_close_black_24dp" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -28,37 +28,37 @@
 
 
         <LinearLayout
+            android:id="@+id/galleryPrev"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/galleryPrev"
-            android:orientation="vertical"
             android:background="#b6b6b6"
-            android:paddingRight="15dp"
-            android:paddingLeft="15dp">
+            android:orientation="vertical"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="15sp"
-                android:textStyle="bold"
                 android:id="@+id/galleryName"
-                android:textAlignment="center" />
-
-            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textAlignment="center"
                 android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
                 android:id="@+id/galleryDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:textAlignment="textStart"
+                android:textSize="15sp"
 
                 />
         </LinearLayout>
 
         <ImageView
+            android:id="@+id/galleryClose2"
             android:layout_width="35dp"
             android:layout_height="30dp"
-            android:src="@drawable/ic_close_black_24dp"
             android:layout_alignParentRight="true"
-            android:id="@+id/galleryClose2" />
+            android:src="@drawable/ic_close_black_24dp" />
     </RelativeLayout>
 </RelativeLayout>
